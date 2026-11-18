@@ -22,7 +22,7 @@ def get_countdown():
 
     return (
         f"{sign}{days}j {hours}h {minutes}m "
-        "avant Jeux de genie 2028"
+        "avant les JDG 2028"
     )
 
 def update_slack_name(name):
