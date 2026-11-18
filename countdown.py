@@ -25,12 +25,14 @@ def get_countdown():
         "avant les JDG 2028"
     )
 
+
 def update_slack_name(name):
     token = os.environ["SLACK_USER_TOKEN"]
 
     payload = json.dumps({
         "profile": {
-            "real_name": name
+            "real_name": name,
+            "display_name": name
         }
     }).encode("utf-8")
 
@@ -52,7 +54,8 @@ def update_slack_name(name):
     if not result.get("ok"):
         raise RuntimeError(f"Slack API error: {result}")
 
-    print(f"Updated Slack name: {name}")
+    print(f"Updated real and display names: {name}")
+
 
 if __name__ == "__main__":
     update_slack_name(get_countdown())
