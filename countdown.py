@@ -47,6 +47,8 @@ def update_slack_name(name):
     with urllib.request.urlopen(request) as response:
         result = json.loads(response.read())
 
+    print(json.dumps(result, indent=2))
+
     if not result.get("ok"):
         raise RuntimeError(f"Slack API error: {result}")
 
