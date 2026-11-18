@@ -1,0 +1,9 @@
+# Visual Studio temporary files
+.vs/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables / secrets
+.env
