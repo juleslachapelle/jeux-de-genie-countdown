@@ -21,5 +21,6 @@ jobs:
 
       - name: Update Slack name
         env:
-          SLACK_USER_TOKEN: ${{ secrets.SLACK_USER_TOKEN }}
+          SLACK_USER_TOKEN_1: ${{ secrets.SLACK_USER_TOKEN_1 }}
+          SLACK_USER_TOKEN_2: ${{ secrets.SLACK_USER_TOKEN_2 }}
         run: python countdown.py

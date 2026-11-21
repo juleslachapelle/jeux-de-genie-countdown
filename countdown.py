@@ -26,8 +26,8 @@ def get_countdown():
     )
 
 
-def update_slack_name(name):
-    token = os.environ["SLACK_USER_TOKEN"]
+def update_slack_name(name, token_name):
+    token = os.environ[token_name]
 
     payload = json.dumps({
         "profile": {
@@ -58,4 +58,6 @@ def update_slack_name(name):
 
 
 if __name__ == "__main__":
-    update_slack_name(get_countdown())
+    name = get_countdown()
+    update_slack_name(name, "SLACK_USER_TOKEN_1")
+    update_slack_name(name, "SLACK_USER_TOKEN_2")
